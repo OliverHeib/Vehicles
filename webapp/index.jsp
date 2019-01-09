@@ -17,27 +17,27 @@
 			<h1>All Vehicles</h1>
 			<table class="tablel table-bordered table-striped">
 				<tr>
-	    			<th>ID</th>
-	    			<th>Make</th>
-	    			<th>Model</th>
-	    			<th>Year</th>
-	    			<th>Price</th>
-	    			<th>License Number</th>
-	    			<th>Colour</th>
-	    			<th>Number Doors</th>
-	    			<th>Transmission</th>
-	    			<th>Mileage</th>
-	    			<th>Fuel Type</th>
-	    			<th>Engine Size</th>
-	    			<th>Body Style</th>
-	    			<th>Condition</th>
-	    			<th>Notes</th>
+	    			<th scope="col">ID</th>
+	    			<th scope="col">Make</th>
+	    			<th scope="col">Model</th>
+	    			<th scope="col">Year</th>
+	    			<th scope="col">Price</th>
+	    			<th scope="col">License Number</th>
+	    			<th scope="col">Colour</th>
+	    			<th scope="col">Number Doors</th>
+	    			<th scope="col">Transmission</th>
+	    			<th scope="col">Mileage</th>
+	    			<th scope="col">Fuel Type</th>
+	    			<th scope="col">Engine Size</th>
+	    			<th scope="col">Body Style</th>
+	    			<th scope="col">Condition</th>
+	    			<th scope="col">Notes</th>
 	  			</tr>
 				<%
 					ArrayList<Vehicle> allVehicles = (ArrayList<Vehicle>) request.getAttribute("allVehicles");
 					for (Vehicle v : allVehicles)
 					{
-						out.write("<tr> <td>" + v.getVehicle_id() + "</td> <td>" + v.getMake() + "</td> <td>" + v.getModel() + "</td> <td>" + v.getYear() + "</td> <td>" + v.getPrice() + "</td> <td>" + v.getLicense_number() + "</td> <td>" + v.getColour() + "</td> <td>" + v.getNumber_doors() + "</td> <td>" + v.getTransmission() + "</td> <td>" + v.getMileage() + "</td> <td>" + v.getFuel_type() + "</td> <td>" + v.getEngine_size() + "</td> <td>" + v.getBody_style() + "</td> <td>" + v.getCondition() + "</td> <td>" + v.getNotes() + "</td> </tr>");
+						out.write("<tr> <th scope='row'>" + v.getVehicle_id() + "</th> <td>" + v.getMake() + "</td> <td>" + v.getModel() + "</td> <td>" + v.getYear() + "</td> <td>" + v.getPrice() + "</td> <td>" + v.getLicense_number() + "</td> <td>" + v.getColour() + "</td> <td>" + v.getNumber_doors() + "</td> <td>" + v.getTransmission() + "</td> <td>" + v.getMileage() + "</td> <td>" + v.getFuel_type() + "</td> <td>" + v.getEngine_size() + "</td> <td>" + v.getBody_style() + "</td> <td>" + v.getCondition() + "</td> <td>" + v.getNotes() + "</td> </tr>");
 					}
 				%>
 			</table>
