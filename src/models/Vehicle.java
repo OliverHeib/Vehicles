@@ -1,3 +1,4 @@
+package models;
 public class Vehicle {
 	private int vehicle_id;
 	private String make;
