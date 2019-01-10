@@ -1,4 +1,11 @@
 package models;
+
+//import Start.ServletsHome;
+
+/** 
+ * Stores a record from table vehicle in a class
+ * @author Oliver Heib
+ */
 public class Vehicle {
 	private int vehicle_id;
 	private String make;
@@ -16,6 +23,24 @@ public class Vehicle {
 	private String condition;
 	private String notes;
 	
+	/** 
+	 * Initiates an object of Vehicle class
+	 * @param vehicle_id ID for Vehicle
+	 * @param make The vehicle make
+	 * @param model The vehicle model
+	 * @param year The year the vehicle was registered
+	 * @param price The price of the vehicle
+	 * @param license_number The vehicle Licence number
+	 * @param colour The colour of the car
+	 * @param number_doors Number of doors on the vehicle
+	 * @param transmission The vehicle transmission types
+	 * @param mileage The miles the vehicle has covered
+	 * @param fuel_type The type of fuel the car runs on
+	 * @param engine_size The Cubic Capacity of the engine
+	 * @param body_style The style of the vehicle Body
+	 * @param condition The Condition of the vehicle
+	 * @param notes Notes on the vehicle
+	 */
 	public Vehicle(int vehicle_id, String make, String model, int year, int price, String license_number, String colour, int number_doors, String transmission, int mileage, String fuel_type, int engine_size, String body_style, String condition, String notes) 
 	{
 		this.setVehicle_id(vehicle_id);
