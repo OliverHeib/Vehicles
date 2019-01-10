@@ -6,6 +6,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import Start.ServletsHome;
+
+/** 
+ * Class to connect and retrieve data from vehicle database
+ * @author Oliver Heib
+ */
 public class VehicleDAO {
 	private Connection c;
 	private Statement s;
@@ -57,6 +63,10 @@ public class VehicleDAO {
 		}
 	}
 	
+	/** 
+	 * Retrieve all vehicles from vehicle database
+	 * @return ArrayList<Vehicle> array of all Vehicles
+	 */
 	public ArrayList<Vehicle> getAllVehicle()
 	{
 		c = null;

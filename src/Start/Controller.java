@@ -10,17 +10,17 @@ import org.eclipse.jetty.webapp.WebAppContext;
  */
 public class Controller {
 	
-/** 
-		 * Initiates server
-		 * Sets the resource base,
-		 * Sets landing page,
-		 * Configures server,
-		 * Maps ServletsHome to /home,
-		 * Starts and joins server.
-		 * @param args Command-line arguments 
-		 * @see ServletsHome
-		 * @throws Exception
-		 */
+	/** 
+	 * Initiates server
+	 * Sets the resource base,
+	 * Sets landing page,
+	 * Configures server,
+	 * Maps ServletsHome to /home,
+	 * Starts and joins server.
+	 * @param args Command-line arguments 
+	 * @see ServletsHome
+	 * @throws Exception
+	 */
 	public static void main(String[] args) throws Exception
 	{
 		
