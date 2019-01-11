@@ -18,7 +18,7 @@ public class Controller {
 	 * Maps ServletsHome to /home,
 	 * Starts and joins server.
 	 * @param args Command-line arguments 
-	 * @see ServletsHome
+	 * @see ServletDashboard
 	 * @throws Exception
 	 */
 	public static void main(String[] args) throws Exception
@@ -33,7 +33,9 @@ public class Controller {
 		Configure(server);
 		
 		//mapping
-		ctx.addServlet("servlets.ServletsHome", "/home");
+		ctx.addServlet("servlets.ServletDashboard", "/dashboard");
+		ctx.addServlet("servlets.ServletLogin", "/login");
+		ctx.addServlet("servlets.ServletHome", "/");
 		
 		//Setting the handler and starting the Server
 		server.setHandler(ctx);

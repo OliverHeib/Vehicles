@@ -14,7 +14,7 @@
 	
 	<body>
 		<div class="container">
-			<h1>Dashboard</h1>
+			<h1>Admin Zone</h1>
 			<table class="tablel table-bordered table-striped">
 				<tr>
 	    			<th scope="col">ID</th>

@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import Start.ServletsHome;
+//import Start.ServletsHome;
 
 /** 
  * Class to connect and retrieve data from vehicle database
@@ -99,6 +99,11 @@ public class VehicleDAO {
 		}
 	}
 	
+	/** 
+	 * Retrieve a vehicle from vehicle database with a specified ID
+	 * @return ArrayList<Vehicle> array of a Vehicles
+	 * @param criteria ID of vehicle requested
+	 */
 	public ArrayList<Vehicle> getVehicle(int criteria)
 	{
 		c = null;
@@ -132,6 +137,12 @@ public class VehicleDAO {
 		
 	}
 	
+	/** 
+	 * Retrieve vehicles from vehicle database where specified field like specified criteria string
+	 * @return ArrayList<Vehicle> array of Vehicles matching search criteria
+	 * @param field Field of criteria should be checked against
+	 * @param criteria Criteria to check against
+	 */
 	public ArrayList<Vehicle> SearchVehicleString(String field, String criteria)
 	{
 		c = null;
@@ -198,6 +209,12 @@ public class VehicleDAO {
 		
 	}
 	
+	/** 
+	 * Retrieve vehicles from vehicle database where specified field like specified criteria integer
+	 * @return ArrayList<Vehicle> array of Vehicles matching search criteria
+	 * @param field Field of criteria should be checked against
+	 * @param criteria Criteria to check against
+	 */
 	public boolean InsertVehicle(Vehicle newVehicle)
 	{
 		String query ="SELECT MAX(vehicle_id) FROM vehicles";
@@ -252,6 +269,11 @@ public class VehicleDAO {
 		
 	}
 	
+	/** 
+	 * Updates vehicles from vehicle database
+	 * @return boolean Whether search was successful
+	 * @param upVehicle The vehicle with values to update
+	 */
 	public boolean UpdateVehicle(Vehicle upVehicle)
 	{
 		try
@@ -276,6 +298,11 @@ public class VehicleDAO {
 		}
 	}
 	
+	/** 
+	 * Deletes vehicles from vehicle database with specified ID
+	 * @return boolean Whether deletion was successful
+	 * @param ID of vehicle to delete
+	 */
 	public boolean DeleteVehicle(int ID)
 	{
 		try
