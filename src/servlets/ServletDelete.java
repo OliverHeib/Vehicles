@@ -11,10 +11,19 @@ import javax.servlet.http.HttpSession;
 
 import models.VehicleDAO;
 
+/** 
+ * Class to serve Delete page
+ * @author Oliver Heib
+ */
 public class ServletDelete extends HttpServlet 
 {
 	private static final long serialVersionUID = 1l;
 	
+	/** 
+	 * Serves http post requests
+	 * @param request http request
+	 * @param response http response
+	 */
 	@Override
 	protected void doPost( HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException
 	{        

@@ -13,10 +13,19 @@ import javax.servlet.http.HttpSession;
 import models.Vehicle;
 import models.VehicleDAO;
 
+/** 
+ * Class to serve Doedit page
+ * @author Oliver Heib
+ */
 public class ServletEdit extends HttpServlet 
 {
 	private static final long serialVersionUID = 1l;
 	
+	/** 
+	 * Serves http post requests
+	 * @param request http request
+	 * @param response http response
+	 */
 	@Override
 	protected void doPost( HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException
 	{        

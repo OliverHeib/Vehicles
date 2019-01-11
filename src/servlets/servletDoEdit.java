@@ -3,7 +3,6 @@ package servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,12 +12,30 @@ import javax.servlet.http.HttpSession;
 import models.Vehicle;
 import models.VehicleDAO;
 
+/** 
+ * Class to serve Doedit page
+ * @author Oliver Heib
+ */
 public class servletDoEdit  extends HttpServlet{
 private static final long serialVersionUID = 1l;
 	
+	/** 
+	 * Serves http post requests
+	 * @param request http request
+	 * @param response http response
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		HttpSession session=request.getSession();
+		if(request.getParameter("loggedin") != null)
+		{
+			session.setAttribute("loggedin", request.getParameter("loggedin"));
+		}
+		if(request.getParameter("isadmin") != null)
+		{
+			session.setAttribute("isadmin", request.getParameter("isadmin"));
+		}
+		
 		int ID = Integer.parseInt(request.getParameter("id"));
 		String make = request.getParameter("make");
 		String model = request.getParameter("model");

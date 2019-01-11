@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-//import Start.ServletsHome;
 
 /** 
  * Class to connect and retrieve data from vehicle database
@@ -65,7 +64,7 @@ public class VehicleDAO {
 	
 	/** 
 	 * Retrieve all vehicles from vehicle database
-	 * @return ArrayList<Vehicle> array of all Vehicles
+	 * @return ArrayList array of all Vehicles
 	 */
 	public ArrayList<Vehicle> getAllVehicle()
 	{
@@ -101,7 +100,7 @@ public class VehicleDAO {
 	
 	/** 
 	 * Retrieve a vehicle from vehicle database with a specified ID
-	 * @return ArrayList<Vehicle> array of a Vehicles
+	 * @return ArrayList array of a Vehicles
 	 * @param criteria ID of vehicle requested
 	 */
 	public ArrayList<Vehicle> getVehicle(int criteria)
@@ -139,7 +138,7 @@ public class VehicleDAO {
 	
 	/** 
 	 * Retrieve vehicles from vehicle database where specified field like specified criteria string
-	 * @return ArrayList<Vehicle> array of Vehicles matching search criteria
+	 * @return ArrayList array of Vehicles matching search criteria
 	 * @param field Field of criteria should be checked against
 	 * @param criteria Criteria to check against
 	 */
@@ -178,7 +177,7 @@ public class VehicleDAO {
 	
 	/** 
 	 * Retrieve vehicles from vehicle database where specified field like specified criteria integer
-	 * @return ArrayList<Vehicle> array of Vehicles matching search criteria
+	 * @return ArrayList array of Vehicles matching search criteria
 	 * @param field Field of criteria should be checked against
 	 * @param criteria Criteria to check against
 	 */

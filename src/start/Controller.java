@@ -1,4 +1,4 @@
-package Start;
+package start;
 
 import org.eclipse.jetty.server.Server;
 //import org.eclipse.jetty.webapp.WebAppContext;
@@ -18,7 +18,6 @@ public class Controller {
 	 * Maps ServletsHome to /home,
 	 * Starts and joins server.
 	 * @param args Command-line arguments 
-	 * @see ServletDashboard
 	 * @throws Exception
 	 */
 	public static void main(String[] args) throws Exception

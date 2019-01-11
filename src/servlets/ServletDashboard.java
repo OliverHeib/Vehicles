@@ -13,10 +13,19 @@ import javax.servlet.http.HttpSession;
 import models.Vehicle;
 import models.VehicleDAO;
 
+/** 
+ * Class to serve dashboard page
+ * @author Oliver Heib
+ */
 public class ServletDashboard extends HttpServlet
 {
 	private static final long serialVersionUID = 1l;
 	
+	/** 
+	 * Serves http get requests
+	 * @param request http request
+	 * @param response http response
+	 */
 	@Override
 	protected void doGet( HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException
 	{        
@@ -66,6 +75,12 @@ public class ServletDashboard extends HttpServlet
 		}
 		
 	}
+	
+	/** 
+	 * Serves http post requests
+	 * @param request http request
+	 * @param response http response
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		HttpSession session=request.getSession();
