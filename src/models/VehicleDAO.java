@@ -176,6 +176,12 @@ public class VehicleDAO {
 		
 	}
 	
+	/** 
+	 * Retrieve vehicles from vehicle database where specified field like specified criteria integer
+	 * @return ArrayList<Vehicle> array of Vehicles matching search criteria
+	 * @param field Field of criteria should be checked against
+	 * @param criteria Criteria to check against
+	 */
 	public ArrayList<Vehicle> SearchVehicleInt(String field, int criteria)
 	{
 		c = null;
@@ -210,10 +216,9 @@ public class VehicleDAO {
 	}
 	
 	/** 
-	 * Retrieve vehicles from vehicle database where specified field like specified criteria integer
-	 * @return ArrayList<Vehicle> array of Vehicles matching search criteria
-	 * @param field Field of criteria should be checked against
-	 * @param criteria Criteria to check against
+	 * Insert a new vehicle into the database
+	 * @return boolean whether the insert was successful
+	 * @param newVehicle The vehicle to be inserted into the database
 	 */
 	public boolean InsertVehicle(Vehicle newVehicle)
 	{
@@ -278,7 +283,7 @@ public class VehicleDAO {
 	{
 		try
 		{
-			String query2 ="UPDATE vehicles SET make = "+upVehicle.getMake()+", model = "+upVehicle.getModel()+", year = "+upVehicle.getYear()+", price = "+upVehicle.getPrice()+", license_number = "+upVehicle.getLicense_number()+", colour = "+upVehicle.getColour()+", number_doors = "+upVehicle.getNumber_doors()+", transmission = "+upVehicle.getTransmission()+", mileage = "+upVehicle.getMileage()+", fuel_type = "+upVehicle.getFuel_type()+", engine_size = "+upVehicle.getEngine_size()+", body_style = "+upVehicle.getBody_style()+", condition = "+upVehicle.getCondition()+", notes = "+upVehicle.getNotes()+" WHERE vehicle_id = "+upVehicle.getVehicle_id();
+			String query2 ="UPDATE vehicles SET make =\""+upVehicle.getMake()+"\", model =\""+upVehicle.getModel()+"\", year ="+upVehicle.getYear()+", price ="+upVehicle.getPrice()+", license_number =\""+upVehicle.getLicense_number()+"\", colour =\""+upVehicle.getColour()+"\", number_doors ="+upVehicle.getNumber_doors()+", transmission =\""+upVehicle.getTransmission()+"\", mileage ="+upVehicle.getMileage()+", fuel_type =\""+upVehicle.getFuel_type()+"\", engine_size ="+upVehicle.getEngine_size()+", body_style =\""+upVehicle.getBody_style()+"\", condition =\""+upVehicle.getCondition()+"\", notes =\""+upVehicle.getNotes()+"\" WHERE vehicle_id = "+upVehicle.getVehicle_id();
 			
 			c = getConnection();
 			s = c.createStatement();

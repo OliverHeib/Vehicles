@@ -36,6 +36,10 @@ public class Controller {
 		ctx.addServlet("servlets.ServletDashboard", "/dashboard");
 		ctx.addServlet("servlets.ServletLogin", "/login");
 		ctx.addServlet("servlets.ServletHome", "/");
+		ctx.addServlet("servlets.ServletNewvehicle", "/newvehicle");
+		ctx.addServlet("servlets.ServletDelete", "/deletevehicle");
+		ctx.addServlet("servlets.ServletEdit", "/editvehicle");
+		ctx.addServlet("servlets.servletDoEdit", "/doedit");
 		
 		//Setting the handler and starting the Server
 		server.setHandler(ctx);

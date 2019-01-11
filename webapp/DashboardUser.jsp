@@ -42,7 +42,6 @@
 				%>
 			</table>
 			<br>
-			<a href="./addnew">+ New Vehicle</a>
 			<form action="/">
 				<input type="submit" value="Logout"/>
 			</form> 

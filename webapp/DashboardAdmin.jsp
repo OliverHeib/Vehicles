@@ -42,7 +42,23 @@
 				%>
 			</table>
 			<br>
-			<a href="./addnew">+ New Vehicle</a>
+			<a href="/newvehicle">+ New Vehicle</a><br>
+			<form action="/deletevehicle" method="post" >
+				<input id="inputNumber" class="inputNumber" type="number" placeholder="ID" required="" name="id"><br>
+				<input type="submit" value="Delete Record">
+			</form><br>
+			<form action="/editvehicle" method="post" >
+				<input id="inputNumber" class="inputNumber" type="number" placeholder="ID" required="" name="id"><br>
+				<input type="submit" value="Edit Record">
+			</form><br>
+			<form action="" method="post" >
+				<input id="inputText" class="inputText" type="text" placeholder="Criteria" required="" name="criteria"><br>
+				<label for="choice1">Make</label>
+				<input id="inputCheckbox" class="inputCheckbox" type="checkbox" required="" name="choice1" value="choice1">
+				<label for="choice2">Model</label>
+				<input id="inputCheckbox" class="inputCheckbox" type="checkbox" required="" name="choice2" value="choice2"><br>
+				<input type="submit" value="Search Record">
+			</form><br>
 			<form action="/">
 				<input type="submit" value="Logout"/>
 			</form> 

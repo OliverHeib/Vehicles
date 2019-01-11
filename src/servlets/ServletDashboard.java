@@ -20,7 +20,15 @@ public class ServletDashboard extends HttpServlet
 	@Override
 	protected void doGet( HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException
 	{        
-		HttpSession session=request.getSession(true);
+		HttpSession session=request.getSession();
+		if(request.getParameter("loggedin") != null)
+		{
+			session.setAttribute("loggedin", request.getParameter("loggedin"));
+		}
+		if(request.getParameter("isadmin") != null)
+		{
+			session.setAttribute("isadmin", request.getParameter("isadmin"));
+		}
 		
 		if(session.getAttribute("loggedin") != null && session.getAttribute("isadmin") != null)
 		{
@@ -60,7 +68,16 @@ public class ServletDashboard extends HttpServlet
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-		HttpSession session=request.getSession(true);
+		HttpSession session=request.getSession();
+		if(request.getParameter("loggedin") != null)
+		{
+			session.setAttribute("loggedin", request.getParameter("loggedin"));
+		}
+		if(request.getParameter("isadmin") != null)
+		{
+			session.setAttribute("isadmin", request.getParameter("isadmin"));
+		}
+		
 		session.setAttribute("loggedin", true);
 		String uname = request.getParameter("username");
 		String password = request.getParameter("password");
