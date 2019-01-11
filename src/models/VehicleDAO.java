@@ -137,7 +137,7 @@ public class VehicleDAO {
 	}
 	
 	/** 
-	 * Retrieve vehicles from vehicle database where specified field like specified criteria string
+	 * Retrieve vehicles from vehicle database where specified field like specified string criteria 
 	 * @return ArrayList array of Vehicles matching search criteria
 	 * @param field Field of criteria should be checked against
 	 * @param criteria Criteria to check against
@@ -176,7 +176,7 @@ public class VehicleDAO {
 	}
 	
 	/** 
-	 * Retrieve vehicles from vehicle database where specified field like specified criteria integer
+	 * Retrieve vehicles from vehicle database where specified field like specified integer criteria 
 	 * @return ArrayList array of Vehicles matching search criteria
 	 * @param field Field of criteria should be checked against
 	 * @param criteria Criteria to check against
@@ -212,6 +212,45 @@ public class VehicleDAO {
 			closeConnection();
 		}
 		
+	}
+	
+	/** 
+	 * Retrieve vehicles from vehicle database where specified field between specified integer criteria 
+	 * @return ArrayList array of Vehicles matching search criteria
+	 * @param field Field of criteria should be checked against
+	 * @param criteria1 Criteria to check against
+	 * @param criteria2 Criteria to check against
+	 */
+	public ArrayList<Vehicle> SearchVehicleRange(String field, int criteria1, int criteria2)
+	{
+		c = null;
+		s = null;
+		r = null;
+		ArrayList<Vehicle> a = new ArrayList<Vehicle>();
+		String query ="SELECT * FROM vehicles WHERE "+field+" LIKE "+criteria1+" and "+ criteria2;
+		
+		try
+		{
+			c = getConnection();
+			s = c.createStatement();
+			r = s.executeQuery(query);
+			
+			while (r.next())
+			{
+				a.add(new Vehicle(r.getInt("vehicle_id"), r.getString("make"), r.getString("model"), r.getInt("year"), r.getInt("price"), r.getString("license_number"), r.getString("colour"), r.getInt("number_doors"), r.getString("transmission"), r.getInt("mileage"), r.getString("fuel_type"), r.getInt("engine_size"), r.getString("body_style"), r.getString("condition"), r.getString("notes")));
+			}
+			return a;
+			
+		}
+		catch (SQLException e) 
+		{
+			System.out.println(e.getMessage());	
+			return a;
+		}
+		finally
+		{
+			closeConnection();
+		}
 	}
 	
 	/** 

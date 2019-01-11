@@ -1,6 +1,8 @@
 package servlets;
 
 import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -95,8 +97,8 @@ public class ServletDashboard extends HttpServlet
 		
 		session.setAttribute("loggedin", true);
 		String uname = request.getParameter("username");
-		String password = request.getParameter("password");
-		if(uname.equals("user")&& password.equals("1234"))
+		String password = GenHash(request.getParameter("password"));
+		if(uname.equals("user")&& password.equals(GenHash("1234")))
 		{
 			session.setAttribute("isadmain", false);
 			VehicleDAO dao = new VehicleDAO();
@@ -106,7 +108,7 @@ public class ServletDashboard extends HttpServlet
 			request.setAttribute("allVehicles", allVehicles);
 			view.forward(request, response);   
 		}
-		else if(uname.equals("admin")&& password.equals("asdf"))
+		else if(uname.equals("admin")&& password.equals(GenHash("asdf")))
 		{
 			session.setAttribute("isadmain", true);
 			VehicleDAO dao = new VehicleDAO();
@@ -121,6 +123,33 @@ public class ServletDashboard extends HttpServlet
 			session.setAttribute("loggedin", false);
 			doGet(request, response);
 		}
+	}
+	
+	private String GenHash(String pass)
+	{
+		try {
+            // Create MessageDigest instance for MD5
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            //Add password bytes to digest
+            md.update(pass.getBytes());
+            //Get the hash's bytes
+            byte[] bytes = md.digest();
+            //This bytes[] has bytes in decimal format;
+            //Convert it to hexadecimal format
+            StringBuilder sb = new StringBuilder();
+            for(int i=0; i< bytes.length ;i++)
+            {
+                sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
+            }
+            //Get complete hashed password in hex format
+            return sb.toString();
+        }
+        catch (NoSuchAlgorithmException e)
+        {
+            e.printStackTrace();
+            return "a";
+        }
+		
 	}
 
 }
