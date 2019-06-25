@@ -6,6 +6,4 @@ This project was completed for my second year advanced programming corce part of
 
 [Java Doc](https://oliverheib.github.io/Vehicles/doc/)
 
-[Github Repository](https://github.com/OliverHeib/Vehicles/)
-
 [Home Page](https://oliverheib.github.io)
